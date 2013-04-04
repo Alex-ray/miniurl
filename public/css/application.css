@@ -22,18 +22,11 @@ h2 {
   color: rgb(253, 121, 91);
   text-shadow: 0px 1px rgb(206,82,60), 0px -1px rgb(252,203,196);
 }
-form#login {
+form#login, form#signup {
   width: 50%;
   margin: 0 auto;
   text-align: center;
   padding: 10px 0px;
-}
-
-form#signup{
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 10px 0;
 }
 
 form input#button {
@@ -60,7 +53,7 @@ form input#button:hover, form#signup button:hover {
   text-shadow: 0px 1px rgb(155,140,170), 0px -1px white;
 }
 
-form input[type="email"], form input[type="password"] {
+form input[type="email"], form input[type="password"], form input[type="text"] {
   background-color: rgb(253,237,208);
   margin: 10px 0;
   padding: 10px 5px;
