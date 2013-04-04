@@ -17,8 +17,21 @@
 
   <% else %>
     <h2>Welcome back <%= @user %>!</h2>
-    <form action="/logout" method="get">
+      <form id="url" action="/url" method="get" name="url">
+        <input id="url" type="text" name="long_url" placeholder="http://example.com" /><br>
+        <input id="button" type="submit" value="Submit" />
+      </form>
+      <form action="/logout" method="get">
       <button name="signup" type="submit" value="logout">Log Out</button>
     </form>
+
+    <% @user_urls.each do |url| %>
+
+      <li class="links">
+        <a href="short/<%= url.long_url %>"><%= url.long_url %></a>
+        <a href="short/<%= url.short_url %>"><%= url.short_url %></a>
+      </li>
+
+    <% end %>
   <% end %>
 </div>
