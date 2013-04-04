@@ -1,3 +1,4 @@
 class User < ActiveRecord::Base
-  # Remember to create a migration!
+  validates :email, :uniqueness => true
+  validates :user_name, :uniqueness => true
 end

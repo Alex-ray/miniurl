@@ -1,23 +1,24 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  <h1>Welcome to bits</h1>
+  <% if @login_fail %>
+    <p>Wrong user name or password!</p>
+  <%end%>
+  <%if @user.nil? %>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+    <form name="login" action="/login" method="post">
+      <input id="email" name="email" type="email" placeholder="email@example.com" />
+      <input id="pwd" type="password" name="password" placeholder="Password" />
+      <input id="button" type="submit" value="Login" />
+    </form>
+
+    <form action="/signup" method="get">
+      <button name="signup" type="submit" value="sign_up">Sign Up</button>
+    </form>
+
+  <% else %>
+    <h2>Welcome back <%= @user %>!</h2>
+    <form action="/logout" method="get">
+      <button name="signup" type="submit" value="logout">Log Out</button>
+    </form>
+  <% end %>
 </div>
