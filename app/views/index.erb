@@ -1,18 +1,18 @@
 <div class="container">
   <h1>Welcome to bits</h1>
   <% if @login_fail %>
-    <p>Wrong user name or password!</p>
+    <h2>Wrong user name or password!</h2>
   <%end%>
   <%if @user.nil? %>
 
-    <form name="login" action="/login" method="post">
+    <form id="login" name="login" action="/login" method="post">
       <input id="email" name="email" type="email" placeholder="email@example.com" />
-      <input id="pwd" type="password" name="password" placeholder="Password" />
+      <input id="pwd" type="password" name="password" placeholder="Password" /><br>
       <input id="button" type="submit" value="Login" />
     </form>
 
-    <form action="/signup" method="get">
-      <button name="signup" type="submit" value="sign_up">Sign Up</button>
+    <form id="signup" action="/signup" method="get">
+      <button  name="signup" type="submit" value="sign_up">Sign Up</button>
     </form>
 
   <% else %>
