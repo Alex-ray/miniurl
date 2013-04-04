@@ -21,8 +21,8 @@
         <input id="url" type="text" name="long_url" placeholder="http://example.com" /><br>
         <input id="button" type="submit" value="Submit" />
       </form>
-      <form action="/logout" method="get">
-      <button name="signup" type="submit" value="logout">Log Out</button>
+      <form id="logout" action="/logout" method="get">
+      <button name="logout" type="submit" value="logout">Log Out</button>
     </form>
 
     <% @user_urls.each do |url| %>
